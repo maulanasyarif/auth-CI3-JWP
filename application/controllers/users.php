@@ -117,7 +117,7 @@
 	{
 		$email = $this->input->get('email');
 		$token = $this->input->get('token');
-		$user = $this->User->authentication($email);
+		$user = $this->User->auth($email);
 		if($user){
 			$user_token = $this->User->authToken($token);
 			if($user_token){

@@ -32,7 +32,7 @@ class User extends CI_Model {
 		$this->db->insert($table, $tokens);
 	}
 
-	public function authentication($email)
+	public function auth($email)
 	{
 		return $this->db->get_where('users', ['email' => $email])->row_array();
 		
