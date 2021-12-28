@@ -26,6 +26,29 @@ class User extends CI_Model {
     {
         return $this->db->insert($table, $data);
     }
+	
+	public function insertToken($tokens, $table)
+	{
+		$this->db->insert($table, $tokens);
+	}
+
+	public function authentication($email)
+	{
+		return $this->db->get_where('users', ['email' => $email])->row_array();
+		
+	}
+
+	public function authToken($token)
+	{
+		return $this->db->get_where('tokens', ['token' => $token])->row_array();
+	}
+	
+	public function transferPass($table, $data)
+	{
+		$this->db->set('password', $data['password']);
+		$this->db->where('email', $data['email']);
+		return $this->db->update($table);
+	}
 
     public function delete($where,$table)	
 	{
