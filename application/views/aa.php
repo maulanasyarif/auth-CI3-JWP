@@ -17,7 +17,7 @@
 <nav class="navbar navbar-dark bg-dark">
     <!-- Navbar content -->
     <div class="container-fluid">
-        <a class="navbar-brand" href="/jwp/users/aa">JWP</a>
+        <a class="navbar-brand" href="/jwp/admin/index">JWP</a>
         <form action="<?= base_url('users/logout') ?>" method="post">
             <div class="d-flex justify-content-end">
                 <button type="sumbit" class="btn btn-outline-primary">Logout</button>
